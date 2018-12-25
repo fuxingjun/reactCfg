@@ -1,0 +1,19 @@
+{
+    "presets": [
+        [
+            "env",
+            {
+                "targets": {
+                    "browsers": [
+                        "last 2 versions",
+                        "ie >= 7"
+                    ]
+                },
+                "useBuiltIns": true,
+                "debug": false
+            }
+        ],
+        "react",
+        "stage-2"
+    ]
+}
