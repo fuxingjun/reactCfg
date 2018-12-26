@@ -9,6 +9,9 @@ const devConfig = {
         filename: 'assets/js/[name].js',
         publicPath: '/'
     },
-    mode: 'development'
+    mode: 'development',
+    plugins: [
+        new webpack.HotModuleReplacementPlugin(),
+    ]
 };
 module.exports = merge(baseConfig, devConfig);

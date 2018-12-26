@@ -69,7 +69,6 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: "assets/css/[name].css"
         }),
-        new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             React: 'react',
             ReactDOM: 'react-dom',
