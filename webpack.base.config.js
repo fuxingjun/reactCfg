@@ -4,9 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-    entry: {
-        index: ['webpack-hot-middleware/client?reload=true', path.resolve(__dirname, './src/entry/index.jsx')],
-    },
     module: {
         rules: [
             {

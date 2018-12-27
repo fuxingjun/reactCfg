@@ -4,6 +4,9 @@ const merge = require("webpack-merge");
 const baseConfig = require('./webpack.base.config.js');
 
 const prodConfig = {
+    entry: {
+        index: path.resolve(__dirname, './src/entry/index.jsx')
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'assets/js/[name].js',
@@ -14,8 +17,7 @@ const prodConfig = {
             new UglifyJsPlugin({
                 uglifyOptions: {
                     ie8: true,
-                },
-                sourceMap: true,
+                }
             }),
         ],
     },
