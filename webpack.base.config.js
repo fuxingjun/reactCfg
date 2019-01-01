@@ -64,7 +64,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: "assets/css/[name].css"
+            filename: "assets/css/[name]-[chunkhash:8].css"
         }),
         new webpack.ProvidePlugin({
             React: 'react',

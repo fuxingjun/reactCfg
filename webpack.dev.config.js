@@ -10,7 +10,7 @@ const devConfig = {
     devtool: 'cheap-module-source-map',
     output: {
         path: path.resolve(__dirname, 'devtmp'),
-        filename: 'assets/js/[name].js',
+        filename: 'assets/js/[name]-[chunkhash:8].js',
         publicPath: '/'
     },
     mode: 'development',

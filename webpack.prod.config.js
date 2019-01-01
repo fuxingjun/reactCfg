@@ -9,7 +9,7 @@ const prodConfig = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'assets/js/[name].js',
+        filename: 'assets/js/[name]-[chunkhash:8].js',
         publicPath: '/'
     },
     optimization: {
