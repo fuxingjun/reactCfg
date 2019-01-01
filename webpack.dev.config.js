@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require("webpack-merge");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const baseConfig = require('./webpack.base.config.js');
 
 const devConfig = {
@@ -10,12 +11,15 @@ const devConfig = {
     devtool: 'cheap-module-source-map',
     output: {
         path: path.resolve(__dirname, 'devtmp'),
-        filename: 'assets/js/[name]-[chunkhash:8].js',
+        filename: 'assets/js/[name].js',
         publicPath: '/'
     },
     mode: 'development',
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
+        new MiniCssExtractPlugin({
+            filename: "assets/css/[name].css"
+        })
     ]
 };
 module.exports = merge(baseConfig, devConfig);
