@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const merge = require("webpack-merge");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const baseConfig = require('./webpack.base.config.js');
 
 const devConfig = {
@@ -15,6 +14,35 @@ const devConfig = {
         publicPath: '/'
     },
     mode: 'development',
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "postcss-loader"
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    "style-loader",
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            module: true,
+                            localIdentName: '[local]--[hash:base64:6]'
+                        }
+                    },
+                    "postcss-loader",
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            }
+        ],
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
     ]

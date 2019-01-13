@@ -23,6 +23,39 @@ const prodConfig = {
         ],
     },
     mode: 'production',
-    plugins: []
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "postcss-loader"
+                ]
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            module: true,
+                            localIdentName: '[local]--[hash:base64:6]'
+                        }
+                    },
+                    "postcss-loader",
+                    {
+                        loader: 'sass-loader'
+                    }
+                ]
+            }
+        ],
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: "assets/css/[name]-[chunkhash:8].css"
+        })
+    ]
 };
 module.exports = merge(baseConfig, prodConfig);
