@@ -16,10 +16,7 @@ const devConfig = {
     },
     mode: 'development',
     plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-        new MiniCssExtractPlugin({
-            filename: "assets/css/[name].css"
-        })
+        new webpack.HotModuleReplacementPlugin()
     ]
 };
 module.exports = merge(baseConfig, devConfig);

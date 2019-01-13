@@ -63,6 +63,9 @@ module.exports = {
         ]
     },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: "assets/css/[name].css"
+        }),
         new webpack.ProvidePlugin({
             React: 'react',
             ReactDOM: 'react-dom',

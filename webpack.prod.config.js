@@ -23,10 +23,6 @@ const prodConfig = {
         ],
     },
     mode: 'production',
-    plugins: [
-        new MiniCssExtractPlugin({
-            filename: "assets/css/[name]-[chunkhash:8].css"
-        })
-    ]
+    plugins: []
 };
 module.exports = merge(baseConfig, prodConfig);
