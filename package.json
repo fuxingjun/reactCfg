@@ -21,6 +21,7 @@
     },
     "devDependencies": {
         "argv": "0.0.2",
+        "autoprefixer": "^9.4.10",
         "babel-core": "^6.26.3",
         "babel-loader": "^7.1.4",
         "babel-plugin-import": "^1.10.0",
